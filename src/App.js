@@ -3,9 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import styled from 'styled-components'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RBCarousel from "react-bootstrap-carousel";
+import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col} from 'reactstrap';
 import { Jumbotron } from 'reactstrap';
+
+const styles = { height: 400, width: "100%" };
+const icon_glass = <span className="fa fa-glass" />;
+const icon_music = <span className="fa fa-music" />;
 
 var white = {
   background: "white",
@@ -98,12 +104,114 @@ function SectionRight (props) {
 }
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      autoplay: true
+    };
+  }
+  onSelect = (active, direction) => {
+    console.log(`active=${active} && direction=${direction}`);
+  };
+  visiableOnSelect = active => {
+    console.log(`visiable onSelect active=${active}`);
+  };
+  slideNext = () => {
+    this.slider.slideNext();
+  };
+  slidePrev = () => {
+    this.slider.slidePrev();
+  };
+  goToSlide = () => {
+    this.slider.goToSlide(1);
+  };
+  autoplay = () => {
+    this.setState({ autoplay: !this.state.autoplay });
+  };
+  _changeIcon = () => {
+    let { leftIcon, rightIcon } = this.state;
+    leftIcon = leftIcon ? undefined : icon_glass;
+    rightIcon = rightIcon ? undefined : icon_music;
+    this.setState({ leftIcon, rightIcon });
+  };
   render() {
     return (
       <div>
         <SectionLeft background={white} imgurl="https://i.vimeocdn.com/video/595198868_505x160.jpg" headingStyle={blackHeadingText} paragraphStyle={blackParagraph} imgtitle="MONSOON III" title="MONSOON III" />
         <SectionRight background={gray} imgurl="https://i.vimeocdn.com/video/589972810_530x315.jpg" headingStyle={whiteHeadingText} paragraphStyle={whiteParagraph} imgtitle="BEAMS" title="BEAMS" />
         <SectionLeft background={gradient} imgurl="https://i.vimeocdn.com/video/590587169_530x315.jpg" headingStyle={whiteHeadingText} paragraphStyle={whiteParagraph} imgtitle="Move 2" title="Move 2" />
+        <React.Fragment>
+          <div className="container-fluid" style={{border:"10px", padding:"0px"}}>
+            <Row>
+              <Col span={12}>
+                <RBCarousel
+                  animation={true}
+                  autoplay={this.state.autoplay}
+                  slideshowSpeed={2000}
+                  defaultActiveIndex={0}
+                  leftIcon={this.state.leftIcon}
+                  rightIcon={this.state.rightIcon}
+                  onSelect={this._onSelect}
+                  ref={r => (this.slider = r)}
+                  version={4}
+                  indicators={false}
+                >
+                  <div style={{ height: 400}}>
+                    <div className="carousel-caption">FUCK YES</div>
+                    <div className="blur-me" style={{height: 400, backgroundImage:"url('https://m.media-amazon.com/images/M/MV5BMjI1MDQ2MDg5Ml5BMl5BanBnXkFtZTgwMjc2NjM5ODE@._V1_SY1000_SX675_AL_.jpg')", backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat", overflow:"hidden"}}></div>
+                  </div>
+                  <div style={{ height: 400}}>
+                    <div className="carousel-caption">FUCK YES</div>
+                    <div className="blur-me" style={{height: 400, backgroundImage:"url('https://m.media-amazon.com/images/M/MV5BMjI1MDQ2MDg5Ml5BMl5BanBnXkFtZTgwMjc2NjM5ODE@._V1_SY1000_SX675_AL_.jpg')", backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat", overflow:"hidden"}}></div>
+                  </div>
+                  <div className="blur-me" style={{ height: 400, backgroundImage:"url('https://m.media-amazon.com/images/M/MV5BMTUwMTQ1NDQ2M15BMl5BanBnXkFtZTgwMDU1MTc4NjE@._V1_SY1000_CR0,0,704,1000_AL_.jpg')", backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat", overflow:"hidden"}}>
+                    <div className="carousel-caption">Image</div>
+                  </div>
+                  <div className="blur-me" style={{ height: 400, backgroundImage:"url('https://m.media-amazon.com/images/M/MV5BMTUwMTQ1NDQ2M15BMl5BanBnXkFtZTgwMDU1MTc4NjE@._V1_SY1000_CR0,0,704,1000_AL_.jpg')", backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat", overflow:"hidden"}}>
+                    <div className="carousel-caption">Image</div>
+                  </div>
+                  <div className="blur-me" style={{ height: 400, backgroundImage:"url('https://m.media-amazon.com/images/M/MV5BMTUwMTQ1NDQ2M15BMl5BanBnXkFtZTgwMDU1MTc4NjE@._V1_SY1000_CR0,0,704,1000_AL_.jpg')", backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat", overflow:"hidden"}}>
+                    <div className="carousel-caption">Image</div>
+                  </div>
+                  <div style={{ ...styles, backgroundColor: "aqua" }}>
+                    <video
+                      className="carousel-center"
+                      controls
+                      style={{ width: "75%" }}
+                      height="250"
+                    >
+                      <source
+                        src="https://www.w3schools.com/html/mov_bbb.mp4"
+                        type="video/mp4"
+                      />
+                    </video>
+                    <div className="carousel-caption">Video</div>
+                  </div>
+                  <div style={{ ...styles, backgroundColor: "lightpink" }}>
+                    <div className="carousel-center">center Text</div>
+                    <div className="carousel-caption">Text</div>
+                  </div>
+                  <div style={{ ...styles, backgroundColor: "lightblue" }}>
+                    <span>text</span>
+                    <div className="carousel-caption">Text</div>
+                  </div>
+                  <div style={{ ...styles, backgroundColor: "lightblue" }}>
+                    <div className="carousel-center">
+                      <iframe
+                        style={{ width: 500 }}
+                        height="250"
+                        src="https://www.youtube.com/embed/MhkGQAoc7bc?showinfo=0"
+                        frameBorder="0"
+                        allowFullScreen
+                      />
+                    </div>
+                    <div className="carousel-caption">Youtube</div>
+                  </div>
+                </RBCarousel>
+              </Col>
+            </Row>
+          </div>
+        </React.Fragment>
       </div>
     );
   }
