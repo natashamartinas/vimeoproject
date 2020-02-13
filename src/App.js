@@ -8,6 +8,7 @@ import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 
 import { Container, Row, Col} from 'reactstrap';
 import { Jumbotron } from 'reactstrap';
+import { Button } from 'react-bootstrap'; 
 
 const styles = { height: 400, width: "100%" };
 const icon_glass = <span className="fa fa-glass" />;
@@ -146,7 +147,7 @@ export default class App extends React.Component {
               <Col span={12}>
                 <RBCarousel
                   animation={true}
-                  autoplay={this.state.autoplay}
+                  autoplay={false}
                   slideshowSpeed={2000}
                   defaultActiveIndex={0}
                   leftIcon={this.state.leftIcon}
@@ -157,8 +158,22 @@ export default class App extends React.Component {
                   indicators={false}
                 >
                   <div style={{ height: 400}}>
-                    <div className="carousel-caption">FUCK YES</div>
-                    <div className="blur-me" style={{height: 400, backgroundImage:"url('https://m.media-amazon.com/images/M/MV5BMjI1MDQ2MDg5Ml5BMl5BanBnXkFtZTgwMjc2NjM5ODE@._V1_SY1000_SX675_AL_.jpg')", backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat", overflow:"hidden"}}></div>
+                    <div className="blur-me" style={{height: 400, backgroundImage:"url('https://m.media-amazon.com/images/M/MV5BMjI1MDQ2MDg5Ml5BMl5BanBnXkFtZTgwMjc2NjM5ODE@._V1_SY1000_SX675_AL_.jpg')", backgroundSize:"cover", backgroundPosition:"center", backgroundRepeat:"no-repeat", overflow:"hidden"}}>
+                      
+                    </div>
+                    <div className="carousel-caption">
+                      <Row>
+                        <Col xs="6" sm="5" md="4" lg="3" style={{padding:10, border:"thick solid #0000FF"}}>
+                          <img className="img-fluid" src="https://m.media-amazon.com/images/M/MV5BMjI1MDQ2MDg5Ml5BMl5BanBnXkFtZTgwMjc2NjM5ODE@._V1_SY1000_SX675_AL_.jpg" />
+                        </Col>
+                        <Col xs="6" sm="7" md="8" lg="9" className="leftie" style={{padding:30, border:"thick solid #0000FF"}}>
+                          <h3 style={{color:"white"}}>Hunt for the Wilderpeople</h3>
+                          <p style={{color:"dimgray", opacity:0.7, fontSize:17.5}}>Raised on hip-hop and foster care, defiant city kid Ricky gets a fresh start in the New Zealand countryside. From the director of What We Do In The Shadows.</p>
+                          <Button style={{backgroundColor:"#4682B4", borderColor:"#5F9EA0", margin:5}} variant="primary">Buy Now</Button>
+                          <Button style={{margin:5}} variant="outline-light"><span style={{fontWeight:"bold"}}>Watch Trailer</span></Button>
+                        </Col>
+                      </Row>
+                    </div>
                   </div>
                   <div style={{ height: 400}}>
                     <div className="carousel-caption">FUCK YES</div>

@@ -6,6 +6,22 @@
   filter: blur(1rem);
 }
 
+.img-fluid {
+  width: auto;
+  max-height: 330px;
+}
+.carousel-caption{
+  position: absolute;
+  top: 32%;
+  transform: translateY(-50%);
+}
+.leftie{
+  text-align: left;
+}
+.buy-button{
+  background-color: lightblue;
+}
+
 @media(min-width: 1201px) {
   .outerdiv { 
     position:relative; 
