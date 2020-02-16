@@ -1,18 +1,14 @@
 import React from 'react';
 import Play from './playsign.png';
 import './App.css';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RBCarousel from "react-bootstrap-carousel";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
 import Vimeo from '@u-wave/react-vimeo';
-
 import { Container, Row, Col} from 'reactstrap';
 import { Jumbotron } from 'reactstrap';
-import { Button } from 'react-bootstrap';
 
-const styles = { height: 400, width: "100%" };
-const icon_glass = <span className="fa fa-glass" />;
-const icon_music = <span className="fa fa-music" />;
 
 var white = {
   background: "white",
@@ -232,24 +228,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      autoplay: true
+      autoplay: false
     };
   }
-  onSelect = (active, direction) => {
-    console.log(`active=${active} && direction=${direction}`);
-  };
-  slideNext = () => {
-    this.slider.slideNext();
-  };
-  slidePrev = () => {
-    this.slider.slidePrev();
-  };
-  goToSlide = () => {
-    this.slider.goToSlide(1);
-  };
-  autoplay = () => {
-    this.setState({ autoplay: !this.state.autoplay });
-  };
   render() {
     return (
       <div>
@@ -262,7 +243,7 @@ export default class App extends React.Component {
               <Col span={12}>
                 <RBCarousel
                   animation={true}
-                  autoplay={false}
+                  autoplay={this.state.autoplay}
                   slideshowSpeed={2000}
                   defaultActiveIndex={0}
                   leftIcon={this.state.leftIcon}
@@ -328,8 +309,10 @@ export default class App extends React.Component {
                               className="vid-fluid"
                               height="300%"
                               video="https://vimeo.com/373140876"
-                              controls="true"
-                              autoplay="false"
+                              controls={true}
+                              autoplay={true}
+                              autopause={true}
+                              muted={true}
                             />
                           </Col>
                           <Col xs="4" sm="5" lg="3" className="rightie" style={{padding:20}}>

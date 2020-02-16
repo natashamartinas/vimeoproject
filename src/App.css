@@ -1,4 +1,3 @@
-
 .gradient {
   background-image: linear-gradient(to bottom, #303030, #B8B8B8);
 }
@@ -17,7 +16,6 @@
   height: 100%;
   z-index: 2;
 }
-
 .nichtsOverlay {
   background: rgba(20, 97, 110, 0.82);
   opacity: 0.9;
@@ -25,7 +23,6 @@
   height: 100%;
   z-index: 2;
 }
-
 .vvOverlay {
   background: rgba(78, 82, 49, 0.74);
   opacity: 0.9;
@@ -33,7 +30,6 @@
   height: 100%;
   z-index: 2;
 }
-
 .fourthOverlay {
   background: rgba(41, 69, 95, 0.90);
   opacity: 0.9;
@@ -41,7 +37,6 @@
   height: 100%;
   z-index: 2;
 }
-
 .fullmoonOverlay {
   background: rgba(78, 83, 88, 0.9);
   opacity: 0.9;
@@ -49,7 +44,6 @@
   height: 100%;
   z-index: 2;
 }
-
 .lwOverlay {
   background: rgba(75, 62, 90, 0.5);
   opacity: 0.9;
@@ -57,7 +51,6 @@
   height: 100%;
   z-index: 2;
 }
-
 .img-fluid {
   width: auto;
   max-height: 330px;
@@ -65,7 +58,6 @@
   mask-image: linear-gradient(to top, transparent 5%, black 95%);
   filter: saturate(120%)
 }
-
 .vid-fluid {
   width: auto;
   max-height: 400px;
@@ -73,7 +65,6 @@
   mask-image: linear-gradient(to top, transparent 5%, black 95%);
   filter: saturate(120%)
 }
-
 .carousel-caption{
   position: absolute;
   top: 32%;
@@ -82,10 +73,6 @@
 .rightie{
   text-align: left;
 }
-.buy-button{
-  background-color: lightblue;
-}
-
 @media(min-width: 1201px) {
   .outerdiv { 
     position:relative; 
@@ -137,7 +124,6 @@
   }
   
 }
-
 @media(max-width: 1200px) {
   .left-col {
     width: 100%;
@@ -178,8 +164,6 @@
     height: 400px;
   }
 }
-
-
 @media(max-width: 767px) {
   .movieTitle{
     font-size: 20px;
@@ -194,7 +178,6 @@
     max-height: 18px;
   }
 }
-
 @media(max-width: 444px) {
   .movieTitle{
     font-size: 18px;
@@ -209,7 +192,6 @@
     max-height: 16px;
   }
 }
-
 @media(max-width: 444px) {
   .slideHeight{
     height: 500px;
