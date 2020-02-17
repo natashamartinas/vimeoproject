@@ -238,7 +238,7 @@ export default class App extends React.Component {
         <SectionRight background={gray} imgurl="https://i.vimeocdn.com/video/589972810_530x315.jpg" headingStyle={whiteHeadingText} paragraphStyle={whiteParagraph} imgtitle="BEAMS" title="BEAMS" />
         <SectionLeft background={gradient} imgurl="https://i.vimeocdn.com/video/590587169_530x315.jpg" headingStyle={whiteHeadingText} paragraphStyle={whiteParagraph} imgtitle="Move 2" title="Move 2" />
         <React.Fragment>
-          <div className="container-fluid" style={{border:"10px", padding:"0px"}}>
+          <div className="container-fluid" style={{padding:0}}>
             <Row>
               <Col span={12}>
                 <RBCarousel

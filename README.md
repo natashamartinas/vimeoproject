@@ -2,6 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## BEFORE RUNNING THE APP
 
+1. Make sure you have command line developer tools downloaded on your Mac. 
+
+2. Install node.js (which comes with npm) on your computer. Link: https://nodejs.org/en/
+
+
 Install the following install scrips on the terminal:
 
 - npm install --save reactstrap react react-dom
