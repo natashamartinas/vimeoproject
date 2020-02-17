@@ -304,7 +304,7 @@ export default class App extends React.Component {
                     </div>
                       <div className="carousel-center">
                         <Row>
-                          <Col xs="8" sm="7" lg="9" style={{padding:10}}>
+                          <Col xs="8" sm="7" lg="8" xl="9" style={{padding:10}}>
                             <Vimeo
                               className="vid-fluid"
                               height="300%"
@@ -315,9 +315,9 @@ export default class App extends React.Component {
                               muted={true}
                             />
                           </Col>
-                          <Col xs="4" sm="5" lg="3" className="rightie" style={{padding:20}}>
+                          <Col xs="4" sm="5" lg="4" xl="3" className="rightie" style={{padding:20}}>
                             <h4 className="movieTitle" style={{color:"white"}}>Little Women <span className="italic">Trailer</span></h4>
-                            <Button size="sm" style={lwButton} variant="primary"><span className="buttonDesc" style={{fontWeight:"bold"}}>
+                            <Button size="sm" style={lwButton} variant="primary"><span className="lwbuttonDesc" style={{fontWeight:"bold"}}>
                               <img className="playButtonSizing" style={{marginRight:5}} src={Play} />
                               Buy Now</span>
                             </Button>
